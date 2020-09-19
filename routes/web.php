@@ -13,6 +13,60 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Route::get('/','Controller@index')->name('welcome-form');
+
+//Переход на главную страницу
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
+
+})->name('main');
+
+//Переход на страницу контакты
+Route::get('/contacts', function () {
+    return view('site.contact');
+
+});
+
+//Переход на страницу о магазине
+Route::get('/about', function () {
+    return view('about.about');
+
+});
+
+//Переход на страницу авторизации
+Route::get('/user/login', function () {
+    return view('user.login');
+
+});
+
+//Переход на страницу регистрации пользователя
+Route::get('/user/register', function () {
+    return view('user.register');
+
+});
+
+//Переход в личный кабинет пользователя
+Route::get('/account', function () {
+    return view('account.account');
+
+});
+
+//Переход в личный кабинет пользователя
+Route::get('/cart', function () {
+    return view('cart.cart');
+
+});
+
+//Переход на страницу товаров
+Route::get('/category', function () {
+    return view('catalog.category');
+
+});
+
+Route::post('/contact/submit', 'ContactController@submit')->name('contact-form');
+
+//Переход на страницу авторизации
+Route::get('/user/login', function () {
+    return view('user.login');
+
 });
