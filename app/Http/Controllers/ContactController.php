@@ -13,10 +13,7 @@ class ContactController extends Controller
     public function submit(ContactRequest $req){
 
         $contact= new Contact();
-        /*
-        Log::debug("Input", [
-            $req->all()
-        ]);*/
+
 
         $contact->name = $req->input('name');
         $contact->email = $req->input('email');

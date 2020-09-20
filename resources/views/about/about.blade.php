@@ -1,7 +1,9 @@
     @extends('layouts.app')
+    <body>
+    @include('general.head')
     @section('content')
 
-  <body>
+
 
 
     <section>
@@ -18,5 +20,5 @@
             </div>
         </div>
     </section>
-  </body>
     @endsection
+    </body>
