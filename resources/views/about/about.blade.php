@@ -3,9 +3,6 @@
     @include('general.head')
     @section('content')
 
-
-
-
     <section>
         <div class="container">
             <div class="row">
