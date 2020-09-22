@@ -17,9 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 //Переход на главную страницу
 Route::get('/', function () {
-    return view('main');
-
-})->name('main');
+    return view('main');})->name('main');
 
 //Переход на страницу контакты
 Route::get('/contacts', function () {
