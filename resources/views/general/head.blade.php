@@ -9,6 +9,6 @@
     <a class="p-2 text-dark" href="/account/"> <i class="fa fa-lock"></i> Аккаунт</a>
 
   </nav>
-  <a class="btn btn-outline-primary" href="user/login/"> Вход</a>
+  <a class="btn btn-outline-primary" href="/user/login/"> Вход</a>
 </div>
 

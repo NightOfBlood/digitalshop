@@ -16,8 +16,7 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/','Controller@index')->name('welcome-form');
 
 //Переход на главную страницу
-Route::get('/', function () {
-    return view('main');})->name('main');
+Route::get('/', 'SiteController@actionIndex')->name('main');
 
 //Переход на страницу контакты
 Route::get('/contacts', function () {
@@ -56,11 +55,13 @@ Route::get('/cart', function () {
 });
 
 //Переход на страницу товаров
+Route::get('/category','CatalogController@actionCategory')->name('product');
+/*
 Route::get('/category', function () {
     return view('catalog.category');
 
 });
-
+*/
 Route::post('/contact/submit', 'ContactController@submit')->name('contact-form');
 
 //Переход на страницу авторизации

@@ -9,11 +9,7 @@
 
 }
 
-form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 .middleAdminZagolovok {
   text-align: center;
 }
