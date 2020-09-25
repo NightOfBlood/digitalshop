@@ -69,3 +69,4 @@ Route::get('/user/login', function () {
     return view('user.login');
 
 });
+

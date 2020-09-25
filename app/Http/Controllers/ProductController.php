@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function Product(){
+    public function actionView($id){
+        $product=Product::getProductById($id);
+        $uuid_user="1";
+        Product::addMark($uuid_user,$id);
 
     }
 }

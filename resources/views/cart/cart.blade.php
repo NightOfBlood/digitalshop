@@ -4,39 +4,34 @@
 @include('general.head')
 
     <section>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3"></div>
-        </div>
-        <div class="col-sm-12">
-            <div class="features_items">
-                <h2 class="title text-center">Корзина</h2>
-
-                <p>Ваши товары:</p>
-                <table class="table-bordered table-striped table">
-                    <tr>
-                        <th>Код товара</th>
-                        <th>Название </th>
-                        <th>Категория</th>
-                        <th>Стоимость, руб </th>
-                        <th>Количество, шт </th>
-                        <th>Удалить</th>
-                    </tr>
-
-
-                    <tr>
-                        <td colspan='3'>Общая стоимость:</td>
-
-                    </tr>
-                </table>
-                <a class="btn btn-default checkout " href="/cart/checkout"><i class="fa fa-shopping-cart"></i> Оформить заказ</a>
-
-                <p>Корзина пуста</p>
-                <a class="btn btn-default checkout " href="/"><i class="fa fa-shopping-cart"></i> Вернуться к покупкам</a>
-
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-sm-offset-4 padding-right">
+                    @if($result)}}
+                    <p>Вы зарегистрированы!</p>
+                    <?php else: ?>
+                    @if(isset($errors) && is_array($errors))}}
+                    <ul>
+                        @foreach ($errors as $error):
+                        <li>
+                            {{$error}}
+                        </li>
+                        @endforeach
+                    </ul>
+                    @endif
+                    <div class="signup-form">
+                        <h2 style="text-align:center" >Регистрация</h2>
+                        <form  action="#" method="POST">
+                            <input class="btn btn-default" type="text" name="name" placeholder="Имя" value=" {{$name}}">
+                            <input class="btn btn-default" type="email" name="email" placeholder="Емайл" value="{{$email}}">
+                            <input class="btn btn-default" type="password" name="password" placeholder="Пароль" value="{{$password}}">
+                            <input class="btn btn-default" type="submit" name="submit"  value="Регистрация">
+                        </form>
+                    </div>
+                    @endif
+                </div>
             </div>
         </div>
-    </div>
     </section>
 <body>
 @endsection
