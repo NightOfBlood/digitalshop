@@ -13,7 +13,7 @@ class SiteController extends Controller
       /* $categories = Category::getCategoriesList();
        $sliderProducts = Product::getRecommendedProducts('1');*/
        $lastItems = Product::getLastProducts();
-       return view('main',['categories'=>$category->all()]);
+       return view('main',['categories'=>$category->all(),'lastItems'=>$lastItems]);
 
     }
 }

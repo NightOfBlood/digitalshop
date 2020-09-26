@@ -49,4 +49,6 @@ class Product extends Model
 //        return $productList;
 
     }
+
+
 }
