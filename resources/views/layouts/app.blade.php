@@ -13,7 +13,7 @@
     <link href="{{asset('css/prettyPhoto.css')}}" rel="stylesheet">
     <link href="{{asset('css/price-range.css')}}" rel="stylesheet">
     <link href="{{asset('css/responsive.css')}}" rel="stylesheet">
-    <link rel="shortcut icon" href="{{asset('/img/macau.png')}}">
+    <link rel="shortcut icon" href="{{asset('/img/macau3.png')}}">
     <script src="https://kit.fontawesome.com/8fd403ac8d.js" crossorigin="anonymous"></script>
 </head>
 

@@ -3,28 +3,41 @@
     @include('general.head')
     @section('content')
         <section>
-            <form action="/contact/submit" method="post">
-                @csrf
-                <div class="signup-form">
-                    <h4 class="zagolovok">Вход на сайт</h4>
-                    <div class="col-sm-12">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-sm-offset-4 padding-right">
+                    <?php if(isset($errors)&& is_array($errors)): ?>
+                    <ul>
+                        <?php foreach ($errors as $error): ?>
+                        <li>
+                            <?php echo $error; ?>
+                        </li>
+                        <?php endforeach;?>
+                    </ul>
+                    <?php endif; ?>
+                    <div class="signup-form">
+                        <h2 class="middleAdminZagolovok">Вход на сайт</h2>
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <label>Введите логин</label>
+                                <input type='email' placeholder='Емайл' name='email' class="form-control">
+                            </div>
 
-                        <div class="form-group">
-                            <label>Введите имя/логин</label>
-                            <input type="login" name="login" placeholder="login" class="form-control">
-                        </div>
+                            <div class="form-group">
+                                <label>Введите пароль</label>
+                                <input type='password' placeholder='Пароль' name='password' class="form-control">
+                            </div>
 
-                        <div class="form-group">
-                            <label>Введите пароль</label>
-                            <input type="password" name="password" placeholder="password" class="form-control">
-                        </div>
-
-                        <a href="/user/register/">Регистрация</a>
-                        <button type="submit" name="submit" class="btn btn-success" value="Отправить">Отправить</button>
-
+                            <div class="form-group">
+                                <input type='submit' value='Вход' name='submit' class="form-control">
+                            </div>
+                                <a href="/user/register/">Регистрация</a>
+                        </form>
                     </div>
                 </div>
-            </form>
+            </div>
+        </div>
+
 </section>
 
 @endsection
