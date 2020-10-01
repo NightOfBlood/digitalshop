@@ -17,7 +17,7 @@
                         <th>Комментарий</th>
                         <th>Статус</th>
                     </tr>
-                    @foreach ($orders as $order)
+                    {{--@foreach ($orders as $order)
                     <tr>
                         <td>{{$order['id']}}</td>
                         <td>{{Product::getNameProduct($result['name'])}}</td>
@@ -25,7 +25,7 @@
                         <td>{{$order['comment']}}</td>
                         <td>{{User::getStatus($order['status'])}}</td>
                     </tr>
-                    @endforeach
+                    @endforeach--}}
                 </table>
 
             </div>

@@ -70,3 +70,14 @@ Route::get('/user/login', function () {
 
 });
 
+//Регистрация
+Route::get('/signup','AuthController@getSignup')->name('auth.signup');
+Route::post('/signup','AuthController@postSignup');
+
+//Авторизация
+Route::post('/account', function () {
+    return view('account.account');
+
+});
+
+

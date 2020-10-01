@@ -31,7 +31,7 @@
                             <div class="form-group">
                                 <input type='submit' value='Вход' name='submit' class="form-control">
                             </div>
-                                <a href="/user/register/">Регистрация</a>
+                                <a href="{{ route('auth.signup') }}">Регистрация</a>
                         </form>
                     </div>
                 </div>
