@@ -13,9 +13,7 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title"></h4>
-                                            <a href="/category/
-                                            {{$item['id']}}
-                                            ">
+                                            <a href="/category/{{$item['id']}}">
                                                 {{$item['name']}}
                                             </a>
                                     </div>
@@ -24,8 +22,6 @@
                             </div>
                         </div>
                     </div>
-
-
 
                 <div class="col-sm-9 padding-right">
                     <div class="features_items">

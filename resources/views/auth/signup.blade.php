@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mx-auto">
-                    <form  action="{{route('auth.signup')}}" method="POST" novalidate>
+                    <form  action="/auth/signup" method="GET" novalidate>
                         @csrf
                         <div class="signup-form">
                             <h2 style="text-align:center" >Регистрация #2</h2>

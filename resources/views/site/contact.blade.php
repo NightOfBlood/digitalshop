@@ -9,7 +9,7 @@
         @csrf
         <div class="signup-form">
             <h4 class="zagolovok">Обратная связь</h4>
-            <div class="col-sm-12">
+            <div class="col-lg-4 mx-auto">
 
                 <div class="form-group">
                     <label>Введите имя</label>

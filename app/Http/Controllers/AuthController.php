@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
+    public function __construct(){//конструктор класса
+        $this->middleware('auth');
+    }
+
     public function getSignup(){//Регистрация
         return view('auth.signup');
     }
@@ -20,8 +24,22 @@ class AuthController extends Controller
         user::create([
             'name'=>$request->input('name'),
             'email'=>$request->input('email'),
-            'password'=>bcrypt($request->input('password')),
+            'password'=>bcrypt($request->input('password'))
         ]);
         return redirect()->route('main')->with('info','Регистрация пройдена');
     }
+
+    public function signIn(Request $request){// Вход
+        $auth = Auth::attempt([
+            'email'=>$request->input('email'),
+            'password'=>bcrypt($request->input('password'))
+        ], false);
+
+        if (!$auth){
+            return redirect()->intended('signup')->withErorrs(['Ошибка авторизаци']);
+        }
+        return redirect()->intended('account');
+    }
+
+
 }

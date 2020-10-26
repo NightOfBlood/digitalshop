@@ -1,4 +1,9 @@
+@extends('layouts.app')
 
+@section('content')
+
+<body>
+@include('general.head')
 <head><h2 class="zagolovok">Административная панель</h2></head>
 <section>
     <div class="container">
@@ -28,4 +33,5 @@
         </div>
     </div>
 </section>
-
+</body>
+@endsection

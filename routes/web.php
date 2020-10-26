@@ -12,9 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-//Route::get('/','Controller@index')->name('welcome-form');
-
 //Переход на главную страницу
 Route::get('/', 'SiteController@actionIndex')->name('main');
 
@@ -27,18 +24,6 @@ Route::get('/contacts', function () {
 //Переход на страницу о магазине
 Route::get('/about', function () {
     return view('about.about');
-
-});
-
-//Переход на страницу авторизации
-Route::get('/user/login', function () {
-    return view('user.login');
-
-});
-
-//Переход на страницу регистрации пользователя
-Route::get('/user/register', function () {
-    return view('user.register');
 
 });
 
@@ -55,29 +40,26 @@ Route::get('/cart', function () {
 });
 
 //Переход на страницу товаров
-Route::get('/category','CatalogController@actionCategory')->name('product');
 /*
-Route::get('/category', function () {
-    return view('catalog.category');
-
-});
-*/
+Route::get('/category','CatalogController@actionCategory')->name('product');
 Route::post('/contact/submit', 'ContactController@submit')->name('contact-form');
+*/
 
-//Переход на страницу авторизации
+//Регистрация
+Route::get('/signup','AuthController@signIn');
+//Route::post('/signup','AuthController@postSignup');
+
+//Авторизация
+//Route::get('/auth/signup', '');
+
+//Перехрод на страницу входа
 Route::get('/user/login', function () {
     return view('user.login');
 
 });
 
-//Регистрация
-Route::get('/signup','AuthController@getSignup')->name('auth.signup');
-Route::post('/signup','AuthController@postSignup');
 
-//Авторизация
-Route::post('/account', function () {
-    return view('account.account');
+Route::get('/category/{id}','CatalogController@actionCategory');
 
-});
-
-
+//Переход на страницу конкретного продукта
+Route::get('/product/{id}','ProductController@actionView');
