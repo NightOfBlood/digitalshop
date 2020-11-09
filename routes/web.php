@@ -54,6 +54,12 @@ Route::get('/auth/signup', function () {
     return view('auth.signup');
 });*/
 
-Route::POST('/cart/add/{id}', 'CartController@actionAddToCart');
+Route::post('/cart/add/{id}', 'CartController@actionAddToCart');
 
+Route::get('/registration/checkin', function () {
+    return view('registration/checkin');
+});
+
+Route::get('/registration/checkin', 'AuthController@getsignup')->name('auth.signup');
+Route::post('/registration/checkin', 'AuthController@postSignup');
 

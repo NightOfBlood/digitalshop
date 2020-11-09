@@ -7,12 +7,12 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    public function __construct(){//конструктор класса
+   /* public function __construct(){//конструктор класса
         $this->middleware('auth');
-    }
+    }*/
 
     public function getSignup(){//Регистрация
-        return view('auth.signup');
+        return view('/registration/checkin');
     }
 
     public function postSignup(Request $request){// здесь хранятся данные получаемые от формы
@@ -36,7 +36,7 @@ class AuthController extends Controller
         ], false);
 
         if (!$auth){
-            return redirect()->intended('signup')->withErorrs(['Ошибка авторизаци']);
+            return redirect()->intended('signup')->withErorr(['Ошибка авторизации']);
         }
         return redirect()->intended('account');
     }

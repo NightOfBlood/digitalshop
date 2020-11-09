@@ -15,10 +15,11 @@
                                 @foreach ($categories as $item)
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h4 class="panel-title"></h4>
+                                        <h4 class="panel-title">
                                             <a href="/category/{{$item['id']}}">
                                                 {{$item['name']}}
                                             </a>
+                                        </h4>
                                     </div>
                                 </div>
                                 @endforeach
@@ -35,7 +36,7 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <a href="/product/ {{$item['id']}}"><img style="width:270px; height:250px" src="{{URL::asset('img/'.$item['image'].'.jpg')}}"/>
+                                            <a href="/product/ {{$item['id']}}"><img style="width:270px; height:240px" src="{{URL::asset('img/'.$item['image'].'.jpg')}}"/>
                                                 <h2>{{$item['price']}} Руб. </h2>
                                                 <a href="/product/ {{$item['id']}}">
                                                     {{$item['name']}}
