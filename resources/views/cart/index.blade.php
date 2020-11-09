@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 <body>
 @include('general.head')
 @section('content')

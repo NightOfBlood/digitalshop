@@ -5,7 +5,8 @@
     <a class="p-2 text-dark" href="/category/">Товары</a>
     <a class="p-2 text-dark" href="/about/">О магазине</a>
     <a class="p-2 text-dark" href="/contacts/"> <i class="far fa-id-card"></i> Контакты</a>
-    <a class="p-2 text-dark" href="/cart"> <i class="fa fa-shopping-cart"></i> Корзина</a>
+    <a class="p-2 text-dark" href="/cart"> <i class="fa fa-shopping-cart"></i> Корзина
+      (<span id="cart-count"></span>)</a>
     <a class="p-2 text-dark" href="/account/"> <i class="fa fa-lock"></i> Аккаунт</a>
 
   </nav>

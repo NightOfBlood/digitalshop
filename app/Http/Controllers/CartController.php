@@ -8,27 +8,31 @@ class CartController extends Controller
 {
     //добавление в корзину
     public static function actionAddToCart(Request $req ){
-        dd($req);
-        /*$productsInCart=array();
-        $id=intval($id);
-        if (isset($_SESSION['products'])){
-            $productsInCart=$_SESSION['products'];
+        //dd($req->get('id'));
+    // создать бд (корзина)
+        $productsInCart=array();
+
+        if ($req->session()->has('products')) {
+            $productsInCart = $req->session()->get('products', 'default');
         }
-        if (array_key_exists($id,$productsInCart)){
+
+        $id=$req->get('$id');
+        if (Arr::exists($productsInCart,$id)){
             $productsInCart[$id]++;
         }
         else
             $productsInCart[$id]=1;
+        dd($productsInCart);
+        $req->session()->put('products', $productsInCart);
 
-        $_SESSION['products']=$productsInCart;
-
-        return self::countItems();*/
+        return countItems($req);
     }
 
-    public static function countItems(){
-        if(isset($_SESSION['products'])){
+    public static function countItems(Request $req){
+
+        if ($req->session()->has('products')){
             $count=0;
-            foreach($_SESSION['products'] as $id=>$quantity){
+            foreach($req->session()->get('products', 'default') as $id=>$quantity){
                 $count+=$quantity;
             }
             return $count;

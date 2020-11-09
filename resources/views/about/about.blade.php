@@ -1,4 +1,7 @@
     @extends('layouts.app')
+    @section('title-block')
+        Страница магазина
+    @endsection
     <body>
     @include('general.head')
     @section('content')

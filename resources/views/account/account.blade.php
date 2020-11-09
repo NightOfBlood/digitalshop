@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title-block')
+    Личный кабинет
+@endsection
 <body>
 @include('general.head')
 @section('content')

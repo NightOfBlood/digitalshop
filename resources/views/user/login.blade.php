@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title-block')
+    Вход на сайт
+@endsection
  <body>
     @include('general.head')
     @section('content')
