@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('title-block')
+    Административная панель
+@endsection
 @section('content')
 
 <body>
@@ -11,21 +13,24 @@
             <div class="container text-center">
                 <ul class="nav navbar-nav collapse navbar-collapse ">
                     <li>
-                        <a class="apanel" href="/admin/product">
+                        <a href="/admin">
                             <div>
-                                <img src="image/goods.png" width="200px" height="200px"></div>Управление товарами
+                                <img style="width:200px; height:200px" src="{{URL::asset('/img/goods.png')}}"/>Управление товарами
+                            </div>
                         </a>
                     </li>
                     <li>
-                        <a href="/admin/category">
+                        <a href="/admin">
                             <div>
-                                <img src="image/category.png" width="200px" height="200px"></div>Управление категориями
+                                <img style="width:200px; height:200px" src="{{URL::asset('/img/category.png')}}"/>Управление категориями
+                            </div>
                         </a>
                     </li>
                     <li>
-                        <a href="/admin/order">
+                        <a href="/admin">
                             <div>
-                                <img src="image/orders.png" width="200px" height="200px"></div>Управление заказами
+                                <img style="width:200px; height:200px" src="{{URL::asset('/img/orders.png')}}"/>Управление заказами
+                            </div>
                         </a>
                     </li>
                 </ul>

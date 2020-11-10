@@ -21,6 +21,12 @@ Route::get('/contacts', function () {
 
 });
 
+//Переход на страницу разделов
+Route::get('/goods', function () {
+    return view('goods.goods');
+
+});
+
 //Переход на страницу о магазине
 Route::get('/about', function () {
     return view('about.about');
@@ -33,8 +39,6 @@ Route::get('/account', function () {
 });
 
 //Регистрация
-//Route::get('/signup','AuthController@signIn');
-//Route::post('/signup','AuthController@postSignup');
 Route::get('/auth/signup','AuthController@getSignup')->name('auth.signup');
 Route::post('/auth/signup','AuthController@postSignup');
 
@@ -48,18 +52,15 @@ Route::get('/category/{id}','CatalogController@actionCategory');
 //Переход на страницу конкретного продукта
 Route::get('/product/{id}','ProductController@actionView');
 
-//Переход на страницу регистрации пользователей
-/*
-Route::get('/auth/signup', function () {
-    return view('auth.signup');
-});*/
-
+// переходы
 Route::post('/cart/add/{id}', 'CartController@actionAddToCart');
 
+//
 Route::get('/registration/checkin', function () {
     return view('registration/checkin');
 });
 
-Route::get('/registration/checkin', 'AuthController@getsignup')->name('auth.signup');
-Route::post('/registration/checkin', 'AuthController@postSignup');
-
+//Админка
+Route::get('/admin', function () {
+    return view('admin.admin');
+});
