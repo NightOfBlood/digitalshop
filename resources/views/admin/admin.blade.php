@@ -3,33 +3,33 @@
     Административная панель
 @endsection
 @section('content')
+    @include('general.head')
 
 <body>
-@include('general.head')
 <head><h2 class="zagolovok">Административная панель</h2></head>
 <section>
     <div class="container">
         <div class="row ">
             <div class="container text-center">
-                <ul class="nav navbar-nav collapse navbar-collapse ">
+                <ul class="nav navbar-nav navbar-collapse ">
                     <li>
-                        <a href="/admin">
+                        <a href="/admin/product">
                             <div>
-                                <img style="width:200px; height:200px" src="{{URL::asset('/img/goods.png')}}"/>Управление товарами
+                                <img style="width:200px; height:200px" src="{{URL::asset('img/goods.png')}}"/>Управление товарами
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="/admin">
                             <div>
-                                <img style="width:200px; height:200px" src="{{URL::asset('/img/category.png')}}"/>Управление категориями
+                                <img style="width:200px; height:200px" src="{{URL::asset('img/category.png')}}"/>Управление категориями
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="/admin">
                             <div>
-                                <img style="width:200px; height:200px" src="{{URL::asset('/img/orders.png')}}"/>Управление заказами
+                                <img style="width:200px; height:200px" src="{{URL::asset('img/orders.png')}}"/>Управление заказами
                             </div>
                         </a>
                     </li>

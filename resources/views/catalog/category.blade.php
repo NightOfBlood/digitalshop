@@ -56,6 +56,11 @@
                 </div>
             </div>
         </div>
+        <div class="pagination">
+            {!! $categoryProducts->links() !!}
+        </div>
     </section>
+
+
 @endsection
 </body>

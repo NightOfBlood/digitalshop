@@ -11,21 +11,24 @@ class CartController extends Controller
         //dd($req->get('id'));
     // создать бд (корзина)
         $productsInCart=array();
-
-        if ($req->session()->has('products')) {
-            $productsInCart = $req->session()->get('products', 'default');
-        }
-
-        $id=$req->get('$id');
-        if (Arr::exists($productsInCart,$id)){
-            $productsInCart[$id]++;
+        if ($req->session()->exists('products')) {
+            $productsInCart = $req->session()->get('products');
         }
         else
-            $productsInCart[$id]=1;
-        dd($productsInCart);
-        $req->session()->put('products', $productsInCart);
+            $req->session()->push('products', []);
+        $id=$req->get('id');
+        dd($req);
+       /* if (Arr::exists($productsInCart,$id)){
+            $productsInCart[$id]++;
+        }
+        else*/
+            //$productsInCart[$id]=1;
+        array_push($productsInCart,$id);
+        $req->session()->put('products', array($id=>1));
+        //dd($req);
+        return 0;//countItems($req);
 
-        return countItems($req);
+
     }
 
     public static function countItems(Request $req){
@@ -35,6 +38,7 @@ class CartController extends Controller
             foreach($req->session()->get('products', 'default') as $id=>$quantity){
                 $count+=$quantity;
             }
+           // dd($count);
             return $count;
         }
         else return 0;

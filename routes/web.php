@@ -64,3 +64,13 @@ Route::get('/registration/checkin', function () {
 Route::get('/admin', function () {
     return view('admin.admin');
 });
+//Переход на страницу продуктов в админке
+Route::get('/admin/product', 'AdminController@actionProduct');
+
+//
+//Route::get('product','CatalogController@index');
+
+//переход на страницу для добавление товара
+Route::get('/admin/product/create', function () {
+    return view('admin/product/create');
+});

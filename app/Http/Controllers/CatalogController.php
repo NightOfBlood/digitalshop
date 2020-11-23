@@ -13,7 +13,6 @@ class CatalogController extends Controller
         $categoryProducts = Product::getProductsListByCategory($id);
 
         $category = new Category();
-        //dd($categoryProducts);
         return view('catalog.category',['categories'=>$category->all(),'categoryProducts'=>$categoryProducts]);
     }
 }
