@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    public static function getCategoriesList(){
+
+    }
+
     public static function getProduct(){
         return Product::all();
     }

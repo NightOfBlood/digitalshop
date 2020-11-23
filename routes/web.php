@@ -2,26 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+//------------------------------------------------------------------------------
+//---------------------------------Главная страница-----------------------------
+//------------------------------------------------------------------------------
+
 //Переход на главную страницу
 Route::get('/', 'SiteController@actionIndex')->name('main');
 
-//Переход на страницу контакты
-Route::get('/contacts', function () {
-    return view('site.contact');
-
-});
-
-//Переход на страницу разделов
+//Переход на страницу разделов по товарам
 Route::get('/goods', function () {
     return view('goods.goods');
 
@@ -33,10 +21,20 @@ Route::get('/about', function () {
 
 });
 
+//Переход на страницу контакты
+Route::get('/contacts', function () {
+    return view('site.contact');
+
+});
+
 //Переход в личный кабинет пользователя
 Route::get('/account', function () {
     return view('account.account');
 });
+
+//------------------------------------------------------------------------------
+//--------------------------Страница Регистрации и входа------------------------
+//------------------------------------------------------------------------------
 
 //Регистрация
 Route::get('/auth/signup','AuthController@getSignup')->name('auth.signup');
@@ -47,30 +45,52 @@ Route::get('/user/login', function () {
     return view('user.login');
 });
 
+Route::get('/registration/checkin', function () {
+    return view('registration/checkin');
+});
+
+
+//------------------------------------------------------------------------------
+//--------------------------Страница товары ------------------------------------
+//------------------------------------------------------------------------------
+
 Route::get('/category/{id}','CatalogController@actionCategory');
 
 //Переход на страницу конкретного продукта
 Route::get('/product/{id}','ProductController@actionView');
 
-// переходы
-Route::post('/cart/add/{id}', 'CartController@actionAddToCart');
 
 //
-Route::get('/registration/checkin', function () {
-    return view('registration/checkin');
-});
 
-//Админка
+//------------------------------------------------------------------------------
+//--------------------------Административная панель-----------------------------
+//------------------------------------------------------------------------------
+
+// Переход на страницу административной панели
 Route::get('/admin', function () {
     return view('admin.admin');
 });
-//Переход на страницу продуктов в админке
-Route::get('/admin/product', 'AdminController@actionProduct');
 
-//
-//Route::get('product','CatalogController@index');
+//Переход на страницу для работы с товарами
+Route::get('/admin/product', 'AdminController@actionProduct');
 
 //переход на страницу для добавление товара
 Route::get('/admin/product/create', function () {
     return view('admin/product/create');
 });
+
+//переход на страницу для обновления товара
+Route::get('/admin/product/update/{id}', function () {
+    return view('admin/product/update');
+});
+
+//переход на страницу для удаление товара
+Route::get('/admin/product/delete/{id}', function () {
+    return view('admin/product/delete');
+});
+
+//переход на страницу для работы с категориями
+Route::get('/admin/category', function () {
+    return view('admin/category/category');
+});
+
