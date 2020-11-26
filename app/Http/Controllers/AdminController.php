@@ -15,27 +15,20 @@ class AdminController extends Controller
 
     }
 
-    public function createProduct(){
-        $categoriesList= Product::getCategoriesList();
-
-        if(isset( $_POST['submit'])) {
-            $product['name'] = $_POST['name'];
-            $product['description'] = $_POST['description'];
-            $product['image'] = $_POST['image'];
-            $product['count'] = $_POST['count'];
-            $product['price'] = $_POST['price'];
-            $product['category'] = $_POST['category'];
-            $product['country'] = $_POST['country'];
-            $product['brand'] = $_POST['brand'];
-            $product['novelty'] = $_POST['novelty'];
-            $product['availability'] = $_POST['availability'];
-
-
-            $errors = false;
-            if (!isset($product['name']) || empty($product['name'])) {
-                $errors[] = 'Заполните поля';
-            }
-            return view('admin/product/create', ['product'=>$product]);
-        }
+    public function createProduct(Request $request)//переменная, содержащая параметры запроса
+    {
+        Product::create([
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+            'image' => $request->input('image'),
+            'count' => $request->input('count'),
+            'price' => $request->input('price'),
+            'category' => $request->input('category'),
+            'country' => $request->input('country'),
+            'brand' => $request->input('brand'),
+            'novelty' => $request->input('novelty'),
+            'availability' => $request->input('availability')
+        ]);
+            return redirect()->route('admin/product')->with('info','Товар добавлен');
     }
 }

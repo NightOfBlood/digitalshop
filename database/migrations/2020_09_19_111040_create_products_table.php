@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->string('category');
             $table->string('country');
             $table->string('brand');
+
             $table->timestamps();
         });
     }

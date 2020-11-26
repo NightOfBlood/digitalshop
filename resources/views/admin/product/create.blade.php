@@ -6,7 +6,7 @@
 @include('general.head')
 
 <section>
-    <form action="/contact/submit" method="post">
+    <form action="admin/product" method="post">
         @csrf
         <div class="signup-form">
             <h4 class="zagolovok">Добавление нового товара</h4>
@@ -19,7 +19,7 @@
 
                 <div class="form-group">
                     <label>Описание товара</label>
-                    <input type="text" name="message" placeholder="Description" class="form-control">
+                    <input type="text" name="description" placeholder="Description" class="form-control">
                 </div>
 
                 <div class="form-group">
@@ -54,7 +54,7 @@
 
                 <div class="form-group">
                     <label>Новинка</label>
-                    <select name="is_new" class="form-control">
+                    <select name="novelty" class="form-control">
                         <option value="1" selected> Да </option>
                         <option value="0" selected> Нет </option>
                     </select>
@@ -62,7 +62,7 @@
 
                 <div class="form-group">
                     <label>Наличие на складе</label>
-                    <select name="is_new" class="form-control">
+                    <select name="availability" class="form-control">
                         <option value="1" selected> Да </option>
                         <option value="0" selected> Нет </option>
                     </select>
@@ -72,48 +72,6 @@
             </div>
         </div>
     </form>
-    {{--
-    <div class="container">
-        <div class="row">
-            <h4 class="middleAdminZagolovok">Добавить новый товар</h4>
-            <div class="middleAdminPanel">
-                <div class="col-lg-4">
-                    <div class="login-form">
-                        <form action="#" method="post" enctype="multipart/form-data">
-                            <label>Название товара</label>
-                            <input type="text" name="name">
-                            <label>Стоимость</label>
-                            <input type="text" name="price">
-                            <label>Категория</label>
-                            <select name="category_id">
-                              {{--  @if (is_array($categoriesList))
-                                @foreach($categoriesList as $category)
-                                <option value=" {{$category['id']}}">
-                                    {{$category['name']}}
-                                </option>
-                                @endforeach
-                                @endif
-                            </select>
-                            <!-- <label> Производитель </label>-->
-                            <label>Изображение товара</label>
-                            <input type="file" name="image">
-                            <label>Количество</label>
-                            <input type="text" name="count">
-                            <label>Описание товара</label>
-                            <textarea name="description"></textarea>
-                            <label> Новинка </label>
-                            <select name="is_new">
-                                <option value="1" selected> Да </option>
-                                <option value="0" selected> Нет </option>
-                            </select>
-                            <!-- <label> Наличие на складе </label>-->
-                            <input class="btn btn-default" type="submit" name="submit" value="Сохранить">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    --}}
+
 </section>
 @endsection

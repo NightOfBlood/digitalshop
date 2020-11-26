@@ -75,9 +75,7 @@ Route::get('/admin', function () {
 Route::get('/admin/product', 'AdminController@actionProduct');
 
 //переход на страницу для добавление товара
-Route::get('/admin/product/create', function () {
-    return view('admin/product/create');
-});
+Route::get('/admin/product/create','AdminController@createProduct');
 
 //переход на страницу для обновления товара
 Route::get('/admin/product/update/{id}', function () {
