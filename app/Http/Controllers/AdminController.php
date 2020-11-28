@@ -25,9 +25,7 @@ class AdminController extends Controller
             'price' => $request->input('price'),
             'category' => $request->input('category'),
             'country' => $request->input('country'),
-            'brand' => $request->input('brand'),
-            //'novelty' => $request->input('novelty'),
-            //'availability' => $request->input('availability')
+            'brand' => $request->input('brand')
         ]);
             return redirect()->route('admin/product')->with('info','Товар добавлен');
     }

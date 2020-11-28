@@ -52,21 +52,6 @@
                     <input type="text" name="brand" placeholder="Brand" class="form-control">
                 </div>
 
-                <div class="form-group">
-                    <label>Новинка</label>
-                    <select name="novelty" class="form-control">
-                        <option value="1" selected> Да </option>
-                        <option value="0" selected> Нет </option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Наличие на складе</label>
-                    <select name="availability" class="form-control">
-                        <option value="1" selected> Да </option>
-                        <option value="0" selected> Нет </option>
-                    </select>
-                </div>
 
                 <button type="submit" name="submit" class="btn btn-success" value="Отправить">Отправить</button>
             </div>
