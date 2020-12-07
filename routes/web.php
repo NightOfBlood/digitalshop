@@ -72,9 +72,12 @@ Route::get('/admin', function () {
 });
 
 //Переход на страницу для работы с товарами
-Route::get('/admin/product', 'AdminController@actionProduct');
+Route::get('/admin/product', 'AdminController@actionProduct')->name('productView');
 
 //переход на страницу для добавление товара
+Route::get('/admin/product/form','AdminController@formProduct');
+
+//создание
 Route::get('/admin/product/create','AdminController@createProduct');
 
 //переход на страницу для обновления товара
@@ -87,8 +90,10 @@ Route::get('/admin/product/delete/{id}', function () {
     return view('admin/product/delete');
 });
 
-//переход на страницу для работы с категориями
-Route::get('/admin/category', function () {
-    return view('admin/category/category');
-});
 
+//Переход на страницу для работы с категориями
+Route::get('/admin/category', 'AdminController@actionCategory');
+
+
+//Переход на страницу для работы с  заказами
+Route::get('/admin/order', 'AdminController@actionOrder');

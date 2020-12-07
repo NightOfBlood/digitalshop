@@ -5,8 +5,11 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700);
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
-.pagination{
-    text-align: center;
+
+.page{
+    display: flex;
+    flex-direction: row;
+    gap:15em;
 }
 
 .form-register{
@@ -43,8 +46,10 @@ body {
   /*height: 100%;*/
 }
 
+/* выравнивание пагинации*/
 ul li {
   list-style: none;
+    display: inline-block;
 }
 
 a:hover {

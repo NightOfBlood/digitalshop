@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Models\Product;
+use App\Models\Category;
+use App\Models\Order;
+
 
 
 class AdminController extends Controller
@@ -27,6 +30,22 @@ class AdminController extends Controller
             'country' => $request->input('country'),
             'brand' => $request->input('brand')
         ]);
-            return redirect()->route('admin/product')->with('info','Товар добавлен');
+            //ч>return redirect()->route('productView')->with('info','Товар добавлен');
     }
+
+    public function formProduct(){
+        return view('admin/product/create');
+
+    }
+
+    public function actionCategory(){
+        $categoriesList=Category::getCategory();
+        return view('admin/category/category', ['categoriesList'=>$categoriesList]);
+    }
+
+    public function actionOrder(){
+        $ordersList=Order::getOrdersList();
+        return view('admin/order/order', ['ordersList'=>$ordersList]);
+    }
+
 }

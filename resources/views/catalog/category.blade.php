@@ -56,8 +56,14 @@
                 </div>
             </div>
         </div>
-        <div class="pagination">
-            {!! $categoryProducts->links() !!}
+        <div class="col-span-12">
+            <div class="paginate text-center">
+                <div class="pagination">
+                    <div class="page">
+                        {!! $categoryProducts->links() !!}
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

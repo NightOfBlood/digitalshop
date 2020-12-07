@@ -9,28 +9,27 @@
 <head><h2 class="zagolovok">Административная панель</h2></head>
 <section>
     <div class="container">
-        <div class="row ">
+        <div class="row">
             <div class="container text-center">
-                <ul class="nav navbar-nav navbar-collapse ">
+                <ul class="page nav navbar-nav">
                     <li>
                         <a href="/admin/product">
                             <div>
-                                <img style="width:200px; height:200px" src="{{URL::asset('img/goods.png')}}"/>Управление товарами
-                            </div>
+                                <img style="width:200px; height:200px" src="{{URL::asset('img/goods.png')}}"/></div>Управление товарами
+
                         </a>
                     </li>
                     <li>
-                        <a href="/admin">
+                        <a href="/admin/category">
                             <div>
-                                <img style="width:200px; height:200px" src="{{URL::asset('img/category.png')}}"/>Управление категориями
-                            </div>
+                                <img style="width:200px; height:200px" src="{{URL::asset('img/category.png')}}"/></div>Управление категориями
+
                         </a>
                     </li>
                     <li>
-                        <a href="/admin">
+                        <a href="/admin/order">
                             <div>
-                                <img style="width:200px; height:200px" src="{{URL::asset('img/orders.png')}}"/>Управление заказами
-                            </div>
+                                <img style="width:200px; height:200px" src="{{URL::asset('img/orders.png')}}"/></div>Управление заказами
                         </a>
                     </li>
                 </ul>

@@ -10,7 +10,7 @@
         <div class="container">
             <div class="row">
                 <h4>Список категорий</h4>
-                <a href="/admin/category/create"><i class="fa fa-plus"></i>Добавить категорию</a>
+                <a href="/admin/category"><i class="fa fa-plus"></i>Добавить категорию</a>
                 <table class="table-bordered table-striped table">
                     <tr>
                         <th>Id категории</th>
@@ -30,5 +30,3 @@
             </div>
         </div>
     </section>
-
-<?php include root . '/views/general/footer.php';?>

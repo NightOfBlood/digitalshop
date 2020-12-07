@@ -6,7 +6,7 @@
 @include('general.head')
 
 <section>
-    <form action="admin/product" method="post">
+    <form action="create" method="GET">
         @csrf
         <div class="signup-form">
             <h4 class="zagolovok">Добавление нового товара</h4>
@@ -14,7 +14,7 @@
 
                 <div class="form-group">
                     <label>Название товара</label>
-                    <input type="text" name="name" placeholder=" Name" class="form-control">
+                    <input type="text" name="name" placeholder="Name" class="form-control">
                 </div>
 
                 <div class="form-group">
