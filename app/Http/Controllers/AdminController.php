@@ -30,7 +30,7 @@ class AdminController extends Controller
             'country' => $request->input('country'),
             'brand' => $request->input('brand')
         ]);
-            //ч>return redirect()->route('productView')->with('info','Товар добавлен');
+            //return redirect()->route('productView')->with('info','Товар добавлен');
     }
 
     public function formProduct(){
@@ -38,10 +38,30 @@ class AdminController extends Controller
 
     }
 
+    //Удаление товара
+    public function deleteProduct($id)//переменная, содержащая параметры запроса
+    {
+            $product = Product::find($id);
+            $product -> delete();
+
+        return redirect()->route('productView')->with('info','Товар удален');
+    }
+
+
     public function actionCategory(){
         $categoriesList=Category::getCategory();
         return view('admin/category/category', ['categoriesList'=>$categoriesList]);
     }
+
+    //Удаление категории
+    public function deleteCategory($id)//переменная, содержащая параметры запроса
+    {
+        $product = Product::find($id);
+        $product -> delete();
+
+        return redirect()->route('productView')->with('info','Категория была удалена');
+    }
+
 
     public function actionOrder(){
         $ordersList=Order::getOrdersList();

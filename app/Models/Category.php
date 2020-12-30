@@ -10,4 +10,8 @@ class Category extends Model
         return Category::all();
     }
 
+    public static function deleteCategory($id){
+        return Category::query()->where('id','=', "{$id}");
+    }
+
 }

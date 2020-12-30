@@ -7,10 +7,6 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-   /* public function __construct(){//конструктор класса
-        $this->middleware('auth');
-    }*/
-
     public function getSignup(){//Регистрация
         return view('/registration/checkin');
     }
@@ -36,7 +32,7 @@ class AuthController extends Controller
         ], false);
 
         if (!$auth){
-            return redirect()->intended('signup')->withErorr(['Ошибка авторизации']);
+            return redirect()->intended('signIn')->withErorr(['Ошибка авторизации']);
         }
         return redirect()->intended('account');
     }

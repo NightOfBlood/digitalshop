@@ -86,14 +86,14 @@ Route::get('/admin/product/update/{id}', function () {
 });
 
 //переход на страницу для удаление товара
-Route::get('/admin/product/delete/{id}', function () {
-    return view('admin/product/delete');
-});
+Route::get('/admin/product/delete/{id}', 'AdminController@deleteProduct');
 
 
 //Переход на страницу для работы с категориями
 Route::get('/admin/category', 'AdminController@actionCategory');
 
+//Переход на страницу для удаления категории
+Route::get('/admin/category', 'AdminController@deleteCategory')->name('deleteCategory');
 
 //Переход на страницу для работы с  заказами
 Route::get('/admin/order', 'AdminController@actionOrder');

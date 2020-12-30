@@ -6,7 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $fillable = ['name'];
+    public static function deleteProduct($id){
+        return Product::query()->where('id','=', "{$id}");
+    }
+
+    protected $fillable = [
+        'name',
+        'description',
+        'image',
+        'count',
+        'price',
+        'category',
+        'country',
+        'brand',
+    ];
 
     public static function getProduct(){
         return Product::all();

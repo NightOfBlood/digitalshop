@@ -14,12 +14,14 @@
                     <th>Id Товара</th>
                     <th>Название товара</th>
                     <th>Цена</th>
-                    <th colspan="2">Действия</th>
+                    <th colspan="3">Действия</th>
                  @foreach($productList as $product)
                 <tr>
                     <td>{{$product['id']}}</td>
                     <td>{{$product['name']}}</td>
                     <td>{{$product['price']}}</td>
+
+                    <td><a href="/admin/product/show/{{$product['id']}}>"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
                     <td><a href="/admin/product/update/{{$product['id']}}"><i class="fa fa-pencil-square-o"></i></a></td>
                     <td><a href="/admin/product/delete/{{$product['id']}}>"><i class="fa fa-times"></i></a></td>
                 </tr>

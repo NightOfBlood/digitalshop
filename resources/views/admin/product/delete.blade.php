@@ -3,12 +3,12 @@
     Удаление товара
 @endsection
 @section('content')
-    @include('general.head')
+@include('general.head')
 
     <section>
     <div class="container">
         <div class="row">
-            <div class="col-sm-4 col-sm-offset-4 padding-right">
+            <div class="col-lg-6 mx-auto">
                 <h4 class="middleAdminZagolovok">Удаление товара</h4>
                 <div>
                     <div>
