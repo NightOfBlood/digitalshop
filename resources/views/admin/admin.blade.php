@@ -32,6 +32,12 @@
                                 <img style="width:200px; height:200px" src="{{URL::asset('img/orders.png')}}"/></div>Управление заказами
                         </a>
                     </li>
+                    <li>
+                        <a href="/admin/users">
+                            <div>
+                                <img style="width:200px; height:200px" src="{{URL::asset('img/no-image.jpg')}}"/></div>Управление пользователями
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

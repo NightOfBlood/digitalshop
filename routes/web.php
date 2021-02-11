@@ -69,31 +69,53 @@ Route::get('/product/{id}','ProductController@actionView');
 // Переход на страницу административной панели
 Route::get('/admin', function () {
     return view('admin.admin');
-});
+})->name('adminPage');
+//---------------------------------Работа с товарами---------------------------------
 
 //Переход на страницу для работы с товарами
 Route::get('/admin/product', 'AdminController@actionProduct')->name('productView');
 
+//Перехрод на страницу просмотра товара
+Route::get('/admin/product/show','AdminController@getInformationAboutProduct');
+
 //переход на страницу для добавление товара
 Route::get('/admin/product/form','AdminController@formProduct');
 
-//создание
-Route::get('/admin/product/create','AdminController@createProduct');
+//переход на страницу создания товара
+Route::post('/admin/product/create','AdminController@createProduct');
+Route::get('/admin/product/create', function () {
+    return view('admin.product.create');
+});
 
 //переход на страницу для обновления товара
-Route::get('/admin/product/update/{id}', function () {
-    return view('admin/product/update');
-});
+Route::get('/admin/product/update/{id}', 'AdminController@editProduct');
+Route::post('/admin/product/update/{id}', 'AdminController@updateProduct')->name('productUpdate');
 
 //переход на страницу для удаление товара
 Route::get('/admin/product/delete/{id}', 'AdminController@deleteProduct');
 
+//---------------------------------Работа с категориями---------------------------------
 
 //Переход на страницу для работы с категориями
 Route::get('/admin/category', 'AdminController@actionCategory');
 
+//Переход на страницу для создания категории
+Route::get('/admin/category/create', function () {
+    return view('admin.category.create');
+});
+Route::post('/admin/category/create', 'AdminController@createCategory');
+
+//переход на страницу для обновления категория
+Route::get('/admin/category/update/{id}', 'AdminController@editCategory');
+Route::post('/admin/category/update/{id}', 'AdminController@updateCategory')->name('categoryUpdate');
+
 //Переход на страницу для удаления категории
-Route::get('/admin/category', 'AdminController@deleteCategory')->name('deleteCategory');
+Route::get('/admin/category/delete/{id}', 'AdminController@deleteCategory');
+
+
+//---------------------------------Работа с заказами---------------------------------
 
 //Переход на страницу для работы с  заказами
 Route::get('/admin/order', 'AdminController@actionOrder');
+
+//---------------------------------Работа с корзиной товаров---------------------------------
