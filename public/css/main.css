@@ -5,6 +5,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700);
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
+
 .addProduct{
     display: flex;
     flex-direction: row;
@@ -2358,12 +2359,12 @@ textarea {
   border: 1px solid#F7F7F0;
 }
 
-/*.btn.btn-primary {
+.btn.btn-primary {
   background: #01aa8c;
   border: 0 none;
   border-radius: 0;
   margin-top: 16px;
-}*/
+}
 
 .blank-arrow {
   position: relative;

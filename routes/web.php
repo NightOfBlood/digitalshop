@@ -37,18 +37,12 @@ Route::get('/account', function () {
 //------------------------------------------------------------------------------
 
 //Регистрация
-Route::get('/auth/signup','AuthController@getSignup')->name('auth.signup');
-Route::post('/auth/signup','AuthController@postSignup');
+Route::get('/auth/signup','AuthController@getSignUp')->name('authSignUp');
+Route::post('/auth/signup','AuthController@postSignUp');
 
-//Перехрод на страницу входа
-Route::get('/user/login', function () {
-    return view('user.login');
-});
-
-Route::get('/registration/checkin', function () {
-    return view('registration/checkin');
-});
-
+//Вход на сайт
+Route::get('/auth/signin','AuthController@getSignIn')->name('authSignIn');
+Route::post('/auth/signin','AuthController@postSignIn');
 
 //------------------------------------------------------------------------------
 //--------------------------Страница товары ------------------------------------
@@ -118,4 +112,38 @@ Route::get('/admin/category/delete/{id}', 'AdminController@deleteCategory');
 //Переход на страницу для работы с  заказами
 Route::get('/admin/order', 'AdminController@actionOrder');
 
+//----------------------------------Работа с пользователями---------------------------------
+
+Route::get('/admin/users', function () {
+    return view('admin.user.index');
+});
+
+//-------------------------------------------------------------------------------------------
 //---------------------------------Работа с корзиной товаров---------------------------------
+//-------------------------------------------------------------------------------------------
+
+//Route::get('/cart', 'CartController@cartIndex')->name('cartIndex');
+/*Route::get('/cart', function () {
+    return view('cart.index');
+});*/
+
+//Route::post('/cart/add/{id}','CartController@cartAdd')->name('cartAdd');
+
+
+//-------------------------------------------------------------------------------------------
+//---------------------------------Поиск---------------------------------
+//-------------------------------------------------------------------------------------------
+
+Route::get('/search','SearchController@getResults')->name('searchResults');
+
+
+
+//-------------------------------------------------------------------------------------------
+//---------------------------------Добовление товара в корзину-------------------------------
+//-------------------------------------------------------------------------------------------
+
+
+Route::get('/cart','CartController@cart')->name('cart');
+Route::get('/cart/place','CartController@cartPlace')->name('cart-place');
+
+Route::post('cart/add/{id}','CartController@cartAdd')->name('cart-add');

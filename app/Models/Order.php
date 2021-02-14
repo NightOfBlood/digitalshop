@@ -9,4 +9,8 @@ class Order extends Model
     public static function getOrdersList(){
         return Order::all();
     }
+
+    public function products(){
+        return $this->belongsToMany(Product::class);
+    }
 }

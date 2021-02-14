@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title-block')
+    Страница регистрации
+@endsection
 <body>
 @include('general.head')
 @section('content')
@@ -6,10 +9,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mx-auto">
-                    <form  action="{{route('auth.signup')}}" method="POST" novalidate>
+                    <form  action="{{route('authSignUp')}}" method="POST" novalidate>
                         @csrf
                         <div class="signup-form">
-                            <h2 style="text-align:center" >Регистрация #2</h2>
+                            <h2 style="text-align:center" >Регистрация</h2>
 
                             <div class="form-group">
                                 <label>Введите имя</label>

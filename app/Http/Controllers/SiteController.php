@@ -11,6 +11,7 @@ class SiteController extends Controller
     public function actionIndex(){
        $category = new Category();
        $lastItems = Product::getLastProducts();
+
        return view('main',['categories'=>$category->all(),'lastItems'=>$lastItems]);
        //return view('goods',['categories'=>$category->all(),'lastItems'=>$lastItems]);
     }

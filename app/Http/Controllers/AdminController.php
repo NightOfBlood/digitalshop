@@ -14,6 +14,12 @@ class AdminController extends Controller
 {
     public function actionProduct(){
         $productList = Product::getProduct();
+        //$value = Session::get('key');
+       //сессия пользователя
+        //dd(session()->getId());
+        //id  пользователя
+       // dd(auth()->user()->id);
+
         return view('admin/product/product', ['productList'=>$productList]);
 
     }

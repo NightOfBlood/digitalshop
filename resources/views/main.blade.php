@@ -36,16 +36,19 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <a href="/product/ {{$item['id']}}"><img style="width:270px; height:240px" src="{{URL::asset('img/'.$item['image'].'.jpg')}}"/>
+                                            <form action="{{'/cart/add/'.$item->id /*route('cart-add'), $product*/}}" method="POST">
+                                                @csrf
+                                                <a href="/product/ {{$item['id']}}"><img style="width:270px; height:240px" src="{{URL::asset('img/'.$item['image'].'.jpg')}}"/>
                                                 <h2>{{$item['price']}} Руб. </h2>
                                                 <a href="/product/ {{$item['id']}}">
                                                     {{$item['name']}}
                                                 </a>
                                                 <br>
-                                                <a href="#" class="btn btn-default add-to-cart cart" data-id="{{$item["id"]}}">
+                                                <button type="submit" class="btn btn-primary" role="button">
                                                     <i class="fa fa-shopping-cart"></i>В корзину
+                                                </button>
                                                 </a>
-                                            </a>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>

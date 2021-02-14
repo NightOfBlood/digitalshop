@@ -2,45 +2,41 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-    //добавление в корзину
-    public static function actionAddToCart(Request $req ){
-        //dd($req->get('id'));
-    // создать бд (корзина)
-        $productsInCart=array();
-        if ($req->session()->exists('products')) {
-            $productsInCart = $req->session()->get('products');
+    public function cart(){
+        $orderId = session('orderId');
+        if(!is_null($orderId)){
+            $order = Order::findOrFail($orderId);
         }
-        else
-            $req->session()->push('products', []);
-        $id=$req->get('id');
-        dd($req);
-       /* if (Arr::exists($productsInCart,$id)){
-            $productsInCart[$id]++;
-        }
-        else*/
-            //$productsInCart[$id]=1;
-        array_push($productsInCart,$id);
-        $req->session()->put('products', array($id=>1));
-        //dd($req);
-        return 0;//countItems($req);
-
-
+        return view('cart', compact('order'));
     }
 
-    public static function countItems(Request $req){
+    public function cartPlace(){
+        return view('order');
+    }
 
-        if ($req->session()->has('products')){
-            $count=0;
-            foreach($req->session()->get('products', 'default') as $id=>$quantity){
-                $count+=$quantity;
-            }
-           // dd($count);
-            return $count;
+    //добавление товара в корзину
+    public function cartAdd($productId){
+        $orderId = session('orderId');
+        if (is_null($orderId)){
+            $order = Order::create([
+
+
+            ])->id;
+            session(['orderId'=>$order->id]);
         }
-        else return 0;
+        else
+        {
+            $order = Order::find($orderId);
+        }
+        $order->products()->attach($productId);
+
+        return view('cart', compact('order'));
+
+        //dump($orderId);
     }
 }
