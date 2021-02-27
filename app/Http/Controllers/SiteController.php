@@ -13,7 +13,6 @@ class SiteController extends Controller
        $lastItems = Product::getLastProducts();
 
        return view('main',['categories'=>$category->all(),'lastItems'=>$lastItems]);
-       //return view('goods',['categories'=>$category->all(),'lastItems'=>$lastItems]);
     }
 
 }

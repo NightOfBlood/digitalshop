@@ -14,8 +14,17 @@ class CreateProductsTable extends Migration
     public function up()
     {
 
-        Schema::table('products', function($table) {
-            $table->string('novelty');
+        Schema::create('products', function($table) {
+            $table->id();
+            $table->string('name');
+            $table->longText('description');
+            $table->string('image');
+            $table->integer('count');
+            $table->integer('price');
+            $table->integer('category');
+            $table->string('country');
+            $table->string('brand');
+            $table->timestamps();
         });
 
     }

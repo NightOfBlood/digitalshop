@@ -44,6 +44,9 @@ Route::post('/auth/signup','AuthController@postSignUp');
 Route::get('/auth/signin','AuthController@getSignIn')->name('authSignIn');
 Route::post('/auth/signin','AuthController@postSignIn');
 
+//Выход с аккаунта пользователя
+Route::get('/auth/signout','AuthController@getSignOut')->name('authSignOut');
+
 //------------------------------------------------------------------------------
 //--------------------------Страница товары ------------------------------------
 //------------------------------------------------------------------------------

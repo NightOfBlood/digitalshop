@@ -43,4 +43,10 @@ class AuthController extends Controller
         }
         return redirect()->route('main')->with('info','Вы авторизировались');
     }
+
+    public function getSignOut(){
+        Auth::logout();
+        return redirect()->route('main');
+    }
+
 }

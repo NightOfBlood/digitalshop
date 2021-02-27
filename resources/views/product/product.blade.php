@@ -6,33 +6,30 @@
 @include('general.head')
 @section('content')
     <section>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <div class="left-sidebar">
-                        <h2>Каталог</h2>
-                        <div class="panel-group category-products">
-                            @foreach ($categories as $item)
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a href="/category/{{$item['id']}}">
-                                                {{$item['name']}}
-                                            </a>
-                                        </h4>
-                                    </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="left-sidebar">
+                    <h2>Каталог</h2>
+                    <div class="panel-group category-products">
+                        @foreach ($categories as $item)
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a href="/category/{{$item['id']}}">
+                                            {{$item['name']}}
+                                        </a>
+                                    </h4>
                                 </div>
-                            @endforeach
-                        </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
-        </div>
-                <div class="container">
+
+
             <div class="product-details">
                 <div class="row">
-                    <div class="col-sm-9">
+                    <div class="col-sm-5">
                         <div class="view-product">
                             <img  src="{{URL::asset('img/'.$product['image'].'.jpg')}}"/>
                         </div>

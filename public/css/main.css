@@ -1211,7 +1211,8 @@ h2.title {
 }
 
 .view-product {
-  position: relative;
+    height: 500px;
+    wigth:250px;
 }
 
 .view-product img {
