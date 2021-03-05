@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
-    public function getResults(){
-        return view();
+    public function search(Request $request){
+        //$s = $request->s;
+        //dd($s);
     }
 }

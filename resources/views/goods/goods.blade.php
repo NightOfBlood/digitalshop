@@ -6,30 +6,19 @@
 @include('general.head')
 @section('content')
 <section>
-    <div class="col-sm-12 padding-right">
-        <div class="features_items">
-            <h2 class="title text-center">Новинки</h2>
-            <div class="row">
-                @foreach($lastItems as $item)
-                    <div class="col-sm-4">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <a href="/product/ {{$item['id']}}"><img style="width:270px; height:240px" src="{{URL::asset('img/'.$item['image'].'.jpg')}}"/>
-                                        <h2>{{$item['price']}} Руб. </h2>
-                                        <a href="/product/ {{$item['id']}}">
-                                            {{$item['name']}}
-                                        </a>
-                                        <br>
-                                        <a href="#" class="btn btn-default add-to-cart cart" data-id="{{$item["id"]}}">
-                                            <i class="fa fa-shopping-cart"></i>В корзину
-                                        </a>
-                                    </a>
-                                </div>
-                            </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                            <input class="form-control mr-sm-12" type="search" placeholder="Search" aria-label="Search">
+                        </div>
+                        <div class="form-group col-md-2">
+                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </div>
                     </div>
-                @endforeach
+                </form>
             </div>
         </div>
     </div>

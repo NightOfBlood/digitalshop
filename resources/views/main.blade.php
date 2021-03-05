@@ -10,9 +10,7 @@
         <div class="row">
             <div class="col-sm-3">
                 <div class="left-sidebar">
-                    <h2>Каталог 32</h2>
-                    <h2>Каталог 222</h2>
-
+                    <h2>Каталог</h2>
                     <div class="panel-group category-products">
                         @foreach ($categories as $item)
                             <div class="panel panel-default">

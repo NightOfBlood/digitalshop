@@ -9,12 +9,6 @@ use Illuminate\Support\Facades\Route;
 //Переход на главную страницу
 Route::get('/', 'SiteController@actionIndex')->name('main');
 
-//Переход на страницу разделов по товарам
-Route::get('/goods', function () {
-    return view('goods.goods');
-
-});
-
 //Переход на страницу о магазине
 Route::get('/about', function () {
     return view('about.about');
@@ -137,8 +131,13 @@ Route::get('/admin/users', function () {
 //---------------------------------Поиск---------------------------------
 //-------------------------------------------------------------------------------------------
 
-Route::get('/search','SearchController@getResults')->name('searchResults');
+Route::get('/search','SearchController@search')->name('search');
 
+/*
+ Route::get('/search', function () {
+    return view('search.results')->name('search');
+});
+*/
 
 
 //-------------------------------------------------------------------------------------------

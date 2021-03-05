@@ -2,7 +2,7 @@
   <h5 class="my-0 mr-md-auto font-weight-normal">Digital Shop</h5>
   <nav class="my-2 my-md-0 mr-md-3">
     <a class="p-2 text-dark" href="/">Главная</a>
-    <a class="p-2 text-dark" href="/goods">Товары</a>
+    <a class="p-2 text-dark" href="/search">Товары</a>
     <a class="p-2 text-dark" href="/about/">Магазин</a>
       <a class="p-2 text-dark" href="/admin">Админка</a>
       <a class="p-2 text-dark" href="/contacts/"> <i class="far fa-id-card"></i> Контакты</a>
