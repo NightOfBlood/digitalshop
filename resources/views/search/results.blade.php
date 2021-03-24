@@ -9,10 +9,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <form method="GET" action="{{route('search')}}">
+                    <form method="GET" action="{{url('search')}}">
+                        @csrf
                         <div class="form-row">
                             <div class="form-group col-md-10">
-                                <input class="form-control mr-sm-12" name="s" type="search" placeholder="Search" aria-label="Search">
+                                <input class="form-control mr-sm-12" name="search" type="search" placeholder="Search" aria-label="Search">
                             </div>
                             <div class="form-group col-md-2">
                                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

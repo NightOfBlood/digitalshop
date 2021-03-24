@@ -131,13 +131,12 @@ Route::get('/admin/users', function () {
 //---------------------------------Поиск---------------------------------
 //-------------------------------------------------------------------------------------------
 
-Route::get('/search','SearchController@search')->name('search');
+//Route::get('/search','SearchController@search')->name('search');
 
-/*
+
  Route::get('/search', function () {
-    return view('search.results')->name('search');
-});
-*/
+    return view('search.results');});
+
 
 
 //-------------------------------------------------------------------------------------------

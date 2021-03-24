@@ -5,6 +5,9 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700);
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
+.form-inline{
+
+}
 
 .addProduct{
     display: flex;
@@ -50,9 +53,10 @@ section {
 
 body {
   font-family: "Roboto", sans-serif;
-
   position: relative;
+  margin:15px;
   font-weight: 400;
+    background-color: #ffffff;
   /*height: 100%;*/
 }
 
@@ -80,7 +84,7 @@ a {
 }
 
 h1,
-h2,
+/*h2,*/
 h3,
 h4,
 h5,
@@ -1208,6 +1212,8 @@ h2.title {
   margin-bottom: 40px;
   overflow: hidden;
   margin-top: 10px;
+  /*background-color: grey;*/
+
 }
 
 .view-product {
@@ -1216,7 +1222,8 @@ h2.title {
 }
 
 .view-product img {
-  border: 1px solid #f7f7f0;
+  /* создание контура для фотографии товара */
+  border: 1px solid #ffffff;
   height: 380px;
   width: 100%;
 }
@@ -1260,7 +1267,8 @@ h2.title {
 }
 
 .product-information {
-  border: 1px solid #f7f7f0;
+  /* создание контура для информации о товаре */
+  border: 1px solid #ffffff;
   overflow: hidden;
   padding-bottom: 60px;
   padding-left: 60px;
