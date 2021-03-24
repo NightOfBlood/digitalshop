@@ -5,7 +5,6 @@
 <body>
 @include('general.head')
 @section('content')
-
 <section>
     <div class="container">
         <div class="product-details">
@@ -41,7 +40,8 @@
 
         </div>
     </div>
-</section>
+
+    </section>
 
 @endsection
 </body>

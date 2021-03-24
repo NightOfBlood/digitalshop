@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title-block')
-    Страница разделов
+    Страница поиска
 @endsection
 <body>
 @include('general.head')
@@ -8,19 +8,32 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <form method="GET" action="{{url('search')}}">
-                        @csrf
-                        <div class="form-row">
-                            <div class="form-group col-md-10">
-                                <input class="form-control mr-sm-12" name="search" type="search" placeholder="Search" aria-label="Search">
-                            </div>
-                            <div class="form-group col-md-2">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                <h3>Результаты поиска:"{{ Request::input('query')}}"</h3>
+
+                @if(!$products->count())
+                    <p>Товар не найден</p>
+                @else
+
+                    <table class="table">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Название товара</th>
+                                <th>Бренд товара</th>
+                                <th>Цена</th>
+                                @foreach($products as $product)
+                            </tr>
+                        </thead>
+                            <td>
+                                <a href="/product/{{$product['id']}}">
+                                    {{$product['name']}}
+                                </a>
+                            </td>
+                            <td> {{$product['brand']}}</td>
+                            <td> {{$product['price']}}</td>
+                        @endforeach
+
+                    </table>
+                @endif
             </div>
         </div>
     </section>
