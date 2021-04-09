@@ -8,13 +8,19 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function actionView($id){
-        $product=Product::getProductInformation($id);
-        $categories= Category::getCategory();
+    public function actionView($id)
+    {
+        $product = Product::getProductInformation($id);
+        $categories = Category::getCategory();
         //dd($categories);
         //$uuid_user="1";
         //Product::addMark($uuid_user,$id);
 
-        return view('product.product', ['product'=>$product,'categories'=>$categories]);
+        if (empty($product['image'])) {
+            $product['image'] = 'img/no-image.jpg';
+        } else {
+            $product['image'] = 'img/' . $product['image'] . '.jpg';
+        }
+            return view('product.product', ['product' => $product, 'categories' => $categories]);
     }
 }

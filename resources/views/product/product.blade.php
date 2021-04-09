@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-sm-5">
                     <div class="view-product">
-                        <img  src="{{URL::asset('img/'.$product['image'].'.jpg')}}"/>
+                        <img  src="{{ URL::asset($product['image']) }}"/>
                     </div>
                 </div>
 

@@ -15,10 +15,16 @@ class SearchController extends Controller
         if (!$query){
             redirect()->route('/');
         }
+        /*
         $products = Product::where(DB::raw('name'), 'LIKE', "%{$query}" )
             ->orWhere('brand', 'LIKE', "%{$query}")
-            ->get();
+            ->get();*/
+        //sqlToUpper
         //dd($products);
+        $products = Product::whereRaw("UPPER(name) LIKE '%".strtoupper($query)."%'")
+           ->orWhereRaw("UPPER(brand) LIKE '%".strtoupper($query)."%'")
+            ->get();
+
         return view('search/results')->with('products', $products);
     }
     /*
