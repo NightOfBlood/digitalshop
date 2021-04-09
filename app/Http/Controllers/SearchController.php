@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use DB;
-use App\Models\Product;
+use App\Models\Goods;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -21,7 +21,7 @@ class SearchController extends Controller
             ->get();*/
         //sqlToUpper
         //dd($products);
-        $products = Product::whereRaw("UPPER(name) LIKE '%".strtoupper($query)."%'")
+        $products = Goods::whereRaw("UPPER(name) LIKE '%".strtoupper($query)."%'")
            ->orWhereRaw("UPPER(brand) LIKE '%".strtoupper($query)."%'")
             ->get();
 

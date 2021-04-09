@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Goods;
 use Illuminate\Http\Request;
 use App\Models\Admin;
-use App\Models\Product;
+use App\Models\Goods;
 use App\Models\Category;
 use App\Models\Order;
 
@@ -13,7 +14,7 @@ use App\Models\Order;
 class AdminController extends Controller
 {
     public function actionProduct(){
-        $productList = Product::getProduct();
+        $productList = Goods::getProduct();
         //$value = Session::get('key');
        //сессия пользователя
         //dd(session()->getId());

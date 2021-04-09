@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\Product;
+use App\Models\Goods;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
     public function actionView($id)
     {
-        $product = Product::getProductInformation($id);
+        $product = Goods::getProductInformation($id);
         $categories = Category::getCategory();
         //dd($categories);
         //$uuid_user="1";

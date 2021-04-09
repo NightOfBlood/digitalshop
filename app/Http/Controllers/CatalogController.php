@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\Product;
+use App\Models\Goods;
 use Illuminate\Http\Request;
 
 class CatalogController extends Controller
 {
     public function actionCategory($id){
         $categoryProducts =array();
-        $categoryProducts = Product::getProductsListByCategory($id);
+        $categoryProducts = Goods::getProductsListByCategory($id);
         $category = new Category();
         return view('catalog.category',['categories'=>$category->all(),'categoryProducts'=>$categoryProducts]);
 
