@@ -18,6 +18,7 @@
                         <thead class="thead-light">
                             <tr>
                                 <th>Название товара</th>
+                                <th>Изображение</th>
                                 <th>Бренд товара</th>
                                 <th>Цена</th>
                                 @foreach($products as $product)
@@ -28,6 +29,7 @@
                                     {{$product['name']}}
                                 </a>
                             </td>
+                            <td><img src="{{asset('img/'.$product['image'].'jpg')}}"></td>
                             <td> {{$product['brand']}}</td>
                             <td> {{$product['price']}}</td>
                         @endforeach

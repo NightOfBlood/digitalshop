@@ -21,6 +21,9 @@ Route::get('/contacts', function () {
 
 });
 
+//Переход на страницу корзины
+Route::get('/cart', 'CartController@cart')->name('cart');
+
 //Переход в личный кабинет пользователя
 Route::get('/account', function () {
     return view('account.account');
@@ -111,9 +114,7 @@ Route::get('/admin/order', 'AdminController@actionOrder');
 
 //----------------------------------Работа с пользователями---------------------------------
 
-Route::get('/admin/users', function () {
-    return view('admin.user.index');
-});
+Route::get('/admin/user', 'UserController@actionUsers')->name('viewUsers');
 
 //-------------------------------------------------------------------------------------------
 //---------------------------------Работа с корзиной товаров---------------------------------

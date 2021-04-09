@@ -33,7 +33,7 @@
 
                     <div class="form-group">
                         <label>Изображение</label>
-                        <img src="{{asset('img/'.$product->image.'.jpg')}}">
+                        <img style="width: 350px" src="{{asset('img/'.$product->image.'.jpg')}}">
                         <input type="file" name="image" placeholder="Image" class="form-control">
                     </div>
 

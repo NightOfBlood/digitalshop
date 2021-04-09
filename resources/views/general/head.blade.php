@@ -3,17 +3,17 @@
   <nav class="my-2 my-md-0 mr-md-3">
     <a class="p-2 text-dark" href="/">Главная</a>
     <a class="p-2 text-dark" href="/search">Товары</a>
-    <a class="p-2 text-dark" href="/about/">Магазин</a>
+    <a class="p-2 text-dark" href="/about">Магазин</a>
       <a class="p-2 text-dark" href="/admin">Админка</a>
-      <a class="p-2 text-dark" href="/contacts/"> <i class="far fa-id-card"></i> Контакты</a>
+      <a class="p-2 text-dark" href="/contacts"> <i class="far fa-id-card"></i> Контакты</a>
     <a class="p-2 text-dark" href="/cart"> <i class="fa fa-shopping-cart"></i> Корзина
       (<span id="cart-count"></span>)</a>
-    <a class="p-2 text-dark" href="/account/"> <i class="fa fa-lock"></i> Аккаунт</a>
+    <a class="p-2 text-dark" href="/account"> <i class="fa fa-lock"></i> Аккаунт</a>
   </nav>
     <form class="form-inline my-2 my-lg-0" method="GET" action="{{ route('search') }}">
         @csrf
-        <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <input class="form-control mr-sm-2" name="query" type="search" placeholder="Поиск" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
     </form>
   @if (Auth::check())
           <a href="{{route('authSignOut')}}" class="nav-link">Выйти</a>

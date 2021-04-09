@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Goods;
 use Illuminate\Http\Request;
 use App\Models\Admin;
-use App\Models\Goods;
 use App\Models\Category;
 use App\Models\Order;
 
@@ -28,7 +27,7 @@ class AdminController extends Controller
     public function createProduct(Request $request)//переменная, содержащая параметры запроса
     {
 
-        Product::create([
+        Goods::create([
             'name' => $request->input('name'),
             'description' => $request->input('description'),
             'image' => $request->input('image'),
@@ -59,7 +58,7 @@ class AdminController extends Controller
     //Удаление товара
     public function deleteProduct($id)//переменная, содержащая параметры запроса
     {
-            $product = Product::find($id);
+            $product = Goods::find($id);
             $product -> delete();
 
             return redirect()->route('productView')->with('info','Товар удален');
@@ -77,7 +76,7 @@ class AdminController extends Controller
             'price'=> 'required|max:255',
 
         ]);
-        $product = Product::find($id);
+        $product = Goods::find($id);
         $product->name = $request->get('name');
         $product->description = $request->get('description');
         $product->image = $request->get('image');
@@ -112,7 +111,7 @@ class AdminController extends Controller
 
     public function editProduct($id)//переменная, содержащая параметры запроса
     {
-        $product = Product::find($id);
+        $product = Goods::find($id);
        // dd($product);
         return view('admin/product/update', compact('product'));
     }
@@ -141,7 +140,7 @@ class AdminController extends Controller
 
     //показ информации о товарах ( Работа с товарами )
     public function getInformationAboutProduct(){
-        $product=Product::getProduct();
+        $product=Goods::getProduct();
         return view('admin/product/show', ['product'=>$product]);
     }
 }

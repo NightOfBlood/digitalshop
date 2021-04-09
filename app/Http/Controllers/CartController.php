@@ -25,7 +25,6 @@ class CartController extends Controller
         if (is_null($orderId)){
             $order = Order::create([
 
-
             ])->id;
             session(['orderId'=>$order->id]);
         }
@@ -37,6 +36,6 @@ class CartController extends Controller
 
         return view('cart', compact('order'));
 
-        //dump($orderId);
+        dump($orderId);
     }
 }

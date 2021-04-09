@@ -24,17 +24,17 @@
                         </tr>
                         @foreach ($order->products as $product)
                         <tr>
-                            <td>{{ $product['id']}}</td>
-                            <td><?php echo $product['name']; ?></td>
-                            <td><?php echo $product['category']; ?></td>
-                            <td><?php echo $product['price']; ?></td>
-                            <td><?php echo $productsInCart[$product['id']]; ?></td>
-                            <td><a class="btn btn-default checkout" href="/cart/delete/<?php echo $product['id']; ?>"><i class="fa fa-times"></i></a></td>
+                            <td>{{$product['id']}}</td>
+                            <td>{{$product['name']}}</td>
+                            <td>{{$product['category']}}</td>
+                            <td>{{$product['price']}}</td>
+                            <td>{{$productsInCart[$product['id']]}}</td>
+                            <td><a class="btn btn-default checkout" href="/cart/delete/{{$product['id']}}"><i class="fa fa-times"></i></a></td>
                         </tr>
                         <?php endforeach; ?>
                         <tr>
                             <td colspan='3'>Общая стоимость:</td>
-                            <td><?php echo $totalPrice; ?></td>
+                            <td>{{$totalPrice}}</td>
                         </tr>
                     </table>
                     <a class="btn btn-default checkout " href="/cart/checkout"><i class="fa fa-shopping-cart"></i> Оформить заказ</a>

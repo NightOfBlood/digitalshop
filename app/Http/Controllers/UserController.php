@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function actionUsers($id){
+    public function actionUsers(){
         $users=user::getAllUsers();
-        return view('admin.users', ['users'=>$users]);
+
+        return view('viewUsers', compact('users'));
+        // return view('viewUsers', ['users'=>$users->all()]);
     }
 }
