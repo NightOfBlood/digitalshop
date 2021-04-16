@@ -15,8 +15,10 @@
     <div class="container">
         <div class="row">
             <div class="addProduct">
-                <h4>Список товаров</h4>
-                <a href="/admin/product/create" class="btn btn-primary pull-right">Добавить товар</a>
+                <h4 class="centerPositionForTitle">Список товаров</h4>
+
+                <a href="#" class="btn btn-primary pull-right indent">Выбрать товар</a>
+                <a href="/admin/product/create" class="btn btn-primary pull-right indent">Добавить товар</a>
             </div>
             <table class="table">
                 <thead class="thead-light">

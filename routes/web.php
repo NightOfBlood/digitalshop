@@ -114,7 +114,10 @@ Route::get('/admin/order', 'AdminController@actionOrder');
 
 //----------------------------------Работа с пользователями---------------------------------
 
-Route::get('/admin/user', 'UserController@actionUsers')->name('viewUsers');
+//Переход на страницу со списком пользователей
+Route::get('/admin/user', 'UserController@actionUsers');
+
+Route::get('/admin/user/delete/{id}', 'AdminController@deleteUser')->name('adminUser');
 
 //-------------------------------------------------------------------------------------------
 //---------------------------------Работа с корзиной товаров---------------------------------

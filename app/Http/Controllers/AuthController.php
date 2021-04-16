@@ -23,7 +23,8 @@ class AuthController extends Controller
             'password'=>bcrypt($request->input('password'))
         ]);
 
-        return redirect()->route('main')->with('info','Регистрация пройдена');
+        return redirect()->route('main')
+                         ->with('info','Вы успешно зарегистрировались!');
     }
 
     public function getSignIn()
@@ -49,4 +50,8 @@ class AuthController extends Controller
         return redirect()->route('main');
     }
 
+    public function viewName($id){
+        $name=user::getNameOrUserName($id);
+        return view('general.head', ['name'=> $name]);
+    }
 }

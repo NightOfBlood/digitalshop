@@ -10,7 +10,7 @@ class UserController extends Controller
     public function actionUsers(){
         $users=user::getAllUsers();
 
-        return view('viewUsers', compact('users'));
-        // return view('viewUsers', ['users'=>$users->all()]);
+        //return view('viewUsers', compact('users'));
+        return view('admin.user.user', ['users'=>$users->all()]);
     }
 }

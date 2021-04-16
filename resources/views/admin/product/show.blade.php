@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row">
                 <div>
-                    <h4 class="zagolovok">Список товаров</h4>
+                    <h4 class="centerPositionForTitle">Список товаров</h4>
                 </div>
                 <table class="table">
                     <thead class="thead-light">

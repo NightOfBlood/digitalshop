@@ -16,6 +16,7 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
     </form>
   @if (Auth::check())
+          <a href="#" class="nav-link">{{Auth::user()->getNameOrUsername}}</a>
           <a href="{{route('authSignOut')}}" class="nav-link">Выйти</a>
     @else
           <a class="btn btn-outline-primary" href="/auth/signin">Вход</a>

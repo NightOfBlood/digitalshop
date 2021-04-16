@@ -43,7 +43,10 @@ class user extends Authenticatable
         return user::all();
     }
 
-    /*public static function getNameOrUserName($id){
-        return user::query()->where('id', '=',"{$id}")->get(name);
+   /* public static function getNameOrUserName($id){
+
+        //return users::query()->where('name', '=',"{$name}")->get(name);
+        return user::query()->where('name', '=', "{name}");
+
     }*/
 }

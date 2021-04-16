@@ -33,9 +33,9 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/admin/users">
+                        <a href="/admin/user">
                             <div>
-                                <img style="width:200px; height:200px" src="{{URL::asset('img/no-image.jpg')}}"/></div>Управление пользователями
+                                <img style="width:200px; height:200px" src="{{URL::asset('img/user.png')}}"/></div>Управление пользователями
                         </a>
                     </li>
                 </ul>

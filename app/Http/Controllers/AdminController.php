@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Models\Category;
 use App\Models\Order;
+use App\Models\user;
 
 
 
@@ -142,5 +143,13 @@ class AdminController extends Controller
     public function getInformationAboutProduct(){
         $product=Goods::getProduct();
         return view('admin/product/show', ['product'=>$product]);
+    }
+
+    public function deleteUser($id)//переменная, содержащая параметры запроса
+    {
+        $user = user::find($id);
+        $user -> delete();
+
+        return redirect()->route('adminUser')->with('info','Пользователь был удален');
     }
 }
