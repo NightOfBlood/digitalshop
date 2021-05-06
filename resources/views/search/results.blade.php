@@ -8,7 +8,7 @@
     <section>
         <div class="container">
             <div class="row">
-                <h3>Результаты поиска:"{{ Request::input('query')}}"</h3>
+                <h3 class="centerPositionForTitle">Результаты поиска: {{ Request::input('query')}}</h3>
 
                 @if(!$products->count())
                     <p>Товар не найден</p>

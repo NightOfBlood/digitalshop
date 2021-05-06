@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
+    public function getOrders(){
+        $order= Order::getOrdersList();
+        return view('getOrders', compact('order'));
+    }
+
+    //Работа с сессиями
     public function cart(){
         $orderId = session('orderId');
         if(!is_null($orderId)){

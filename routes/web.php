@@ -12,22 +12,23 @@ Route::get('/', 'SiteController@actionIndex')->name('main');
 //Переход на страницу о магазине
 Route::get('/about', function () {
     return view('about.about');
-
 });
 
 //Переход на страницу контакты
 Route::get('/contacts', function () {
     return view('site.contact');
-
 });
 
 //Переход на страницу корзины
 Route::get('/cart', 'CartController@cart')->name('cart');
+/*
+Route::get('/cart', function () {
+    return view('cart.cart');
+})->name('cart');
+*/
 
 //Переход в личный кабинет пользователя
-Route::get('/account', function () {
-    return view('account.account');
-});
+Route::get('/account', 'CartController@getOrders')->name('getOrders');
 
 //------------------------------------------------------------------------------
 //--------------------------Страница Регистрации и входа------------------------

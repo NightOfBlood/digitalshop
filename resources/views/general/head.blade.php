@@ -8,7 +8,7 @@
       <a class="p-2 text-dark" href="/contacts"> <i class="far fa-id-card"></i> Контакты</a>
     <a class="p-2 text-dark" href="/cart"> <i class="fa fa-shopping-cart"></i> Корзина
       (<span id="cart-count"></span>)</a>
-    <a class="p-2 text-dark" href="/account"> <i class="fa fa-lock"></i> Аккаунт</a>
+    <a class="p-2 text-dark" href="{{route('getOrders')}}"> <i class="fa fa-lock"></i> Аккаунт</a>
   </nav>
     <form class="form-inline my-2 my-lg-0" method="GET" action="{{ route('search') }}">
         @csrf
