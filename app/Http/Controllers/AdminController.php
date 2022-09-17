@@ -100,15 +100,16 @@ class AdminController extends Controller
         $category->name = $request->get('name');
         $category->save();
 
+        
         return redirect('/admin/category/')->with('success', 'Категория успешно отредактирована!');
     }
 
     public function editCategory($id)//переменная, содержащая параметры запроса
     {
         $category = Category::find($id);
-        // dd($product);
+        // dd($product); 
         return view('admin/category/update', compact('category'));
-    }
+    }  
 
     public function editProduct($id)//переменная, содержащая параметры запроса
     {
